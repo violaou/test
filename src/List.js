@@ -1,11 +1,16 @@
 import * as React from 'react';
-import Item from './Item';
 import './style.css';
+import Item from './Item';
 
 export default function List(props) {
   const { items } = props;
-  return items.map(({ value, done }) => {
-    // <Item value done key={value} />;
-    <div> {value}</div>;
-  });
+  console.log(items);
+  return (
+    <div>
+      {items.map(({ value, done, id }) => {
+        // return <div>{value}</div>;
+        return <Item value={value} key={id} />;
+      })}
+    </div>
+  );
 }
